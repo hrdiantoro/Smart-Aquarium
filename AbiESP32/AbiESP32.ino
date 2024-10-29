@@ -49,8 +49,16 @@ void loop() {
       var.height = var.height < 0 ? 0 : var.height;
       heightAverageTimer = millis();
     }
-    var.temperature = sensor["temp"];
-    var.temperature = var.temperature < 0 ? 0 : var.temperature;
+    
+    static uint32_t temperatureAverageTimer;
+    if (millis() - temperatureAverageTimer >= 50) {
+      var.temperature = sensor["temp"];
+      temperatureFilter.addMeasurement(var.temperature);
+      var.temperature = temperatureFilter.getFilteredValue();
+      var.temperature = var.temperature < 0 ? 0 : var.temperature;
+      temperatureAverageTimer = millis();
+    }
+
     var.statusAmonia = var.amonia > var.voltageAmoniaThreshold ? "Tinggi" : "Normal";
     var.statusTurbidity = var.turbidity < var.voltageTurbidityThreshold ? "Keruh" : "Bersih";
   });

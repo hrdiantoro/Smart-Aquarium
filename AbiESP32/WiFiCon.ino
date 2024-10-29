@@ -10,8 +10,8 @@ void wifiConTask() {
 
     // if (!wm.autoConnect("AbirawaAP", ""))  // 192.168.4.1
     // Serial.println("| Failed to connect");
-    // firebase.connectToWiFi("TIMEOSPACE", "1234Saja");
-    firebase.connectToWiFi("abi", "abirawa1945");
+    firebase.connectToWiFi("TIMEOSPACE", "1234Saja");
+    // firebase.connectToWiFi("abi", "abirawa1945");
     configTime(gmtOffset_sec, daylightOffset_sec, ntpServer);
     firebase.init(&auth);
 

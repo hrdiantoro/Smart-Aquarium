@@ -36,6 +36,7 @@ TimerDuration servoOnTimer;
 ////////// Sensor //////////
 SensorModule sensor;
 MovingAverageFilter heightFilter(30);
+MovingAverageFilter temperatureFilter(30);
 
 ////////// Communication //////////
 HardSerial usbSerial;

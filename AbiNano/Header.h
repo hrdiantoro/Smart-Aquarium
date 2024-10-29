@@ -1,5 +1,12 @@
+
+#define ENABLE_MODULE_SERIAL_HARD
+#define ENABLE_MODULE_SERIAL_SOFT
+
+#define ENABLE_SENSOR_MODULE
+#define ENABLE_SENSOR_MODULE_UTILITY
+#define ENABLE_SENSOR_ANALOG
+
 #include "Kinematrix.h"
-#include "index/all.h"
 #include "Servo.h"
 
 ////////// Utility //////////
